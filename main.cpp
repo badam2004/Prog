@@ -9,7 +9,7 @@ int main() {
 
     // Tartalom hozzáadása (pointer nélkül)
     int articleId = portal.addArticle(
-        "Nyakatekerés, azaz az AI nem gyerekjáték.",
+        "Nyakatekerés, azaz az Orosz-Ukrán háború nem gyerekjáték.",
         "A németországi von Haus bárót holtnak nyilvánították!",
         "Kvariczovszki László");
 

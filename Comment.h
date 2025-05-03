@@ -1,3 +1,4 @@
+/*
 #ifndef COMMENT_H
 #define COMMENT_H
 
@@ -35,3 +36,28 @@ public:
     int getArticleId() const {return ArticleId; }
 
 #endif //COMMENT_H
+*/
+///////////////////////////////////////////// Csak Header
+#ifndef COMMENT_H
+#define COMMENT_H
+
+#include <string>
+#include <iostream>
+#include "Content.h"
+#include "Article.h"
+
+class Comment : public Content {
+    std::string text;
+    int userId;
+public:
+    Comment(std::string t, int uid);
+    Comment(std::string t, int uid, int id);
+
+    void display() const override;
+    std::string getType() const override;
+    int getArticleId() const;
+
+    friend std::ostream& operator<<(std::ostream& os, const Comment& c);
+};
+
+#endif // COMMENT_H

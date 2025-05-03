@@ -18,7 +18,14 @@ public:
     }
 
     std::string getType() const override { return "Komment"; }
+
+    friend std::ostream& operator<<(std::ostream& os, const Comment& c) {
+        os << "Komment (#" << c.userId << "): " << c.text << "\n";
+        return os;
+    }
 };
+
+
     int getArticleId() const {return ArticleId; }
 
 #endif //COMMENT_H

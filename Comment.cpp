@@ -9,14 +9,9 @@ Comment::Comment(std::string t, int uid, int id) : text(std::move(t)), userId(ui
 }
 
 // Display fájlba írással
-void Comment::display() const {
-    std::ofstream file("comments.txt", std::ios::app);
-    if (file.is_open()) {
-        file << *this;
-        file.close();
-    } else {
-        std::cerr << "Nem sikerült megnyitni a fájlt.\n";
-    }
+std::ostream& Comment::display() const {
+    os << "Komment (#" << c.userId << "): " << c.text << "\n";
+    return os;
 }
 
 std::string Comment::getType() const {

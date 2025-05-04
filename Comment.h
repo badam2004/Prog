@@ -54,7 +54,7 @@ public:
     Comment(std::string t, int uid);
     Comment(std::string t, int uid, int id);
 
-    void display() const override;
+    std::ostream& display() const override;
     std::string getType() const override;
     int getArticleId() const;
 

@@ -10,4 +10,4 @@ public:
     virtual std::string getType() const = 0;
 };
 
-#endif //CONTENT_H
+#endif // CONTENT_H

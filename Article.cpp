@@ -7,7 +7,7 @@ Article::Article(std::string t, std::string c, std::string a)
 
 // Megjelenítés
 void Article::display() const {
-    std::cout << "Cikk: " << title << "\nSzerző: " << author << "\n" << content << "\n";
+    std::cout << "Cikk: " << title << "\nSzerzõ: " << author << "\n" << content << "\n";
 }
 
 // Típus lekérdezés
@@ -15,7 +15,7 @@ std::string Article::getType() const {
     return "Cikk";
 }
 
-// Szerző lekérdezés
+// Szerzõ lekérdezés
 std::string Article::getAuthor() const {
     return author;
 }

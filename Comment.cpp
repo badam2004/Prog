@@ -1,26 +1,18 @@
 #include "Comment.h"
-#include <fstream>
 
-// Konstruktorok
-Comment::Comment(std::string t, int uid) : text(std::move(t)), userId(uid) {}
-
-Comment::Comment(std::string t, int uid, int id) : text(std::move(t)), userId(uid) {
-    this->id = id; // Feltételezve, hogy az id az ősosztályban van
-}
-
-//Olyan mint az operátor
-std::ostream& Comment::display() const {
-    os << "Komment (#" << c.userId << "): " << c.text << "\n";
-    return os;
-}
+// Konstruktor
+Comment::Comment(std::string t, int uid, int id) : text(std::move(t)), userId(uid), ArticleId(id) {}
 
 std::string Comment::getType() const {
     return "Komment";
 }
 
-
 int Comment::getArticleId() const {
-    return ArticleId;
+    return (this->ArticleId);
+}
+
+void Comment::display() const {
+    std::cout << *this;
 }
 
 // << operátor túlterhelése

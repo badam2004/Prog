@@ -17,7 +17,7 @@ int main() {
 
     // Felhasználók hozzáadása
     portal.addUser(User("Olvasó1", "reader"));
-    portal.addUser(User("Szerző1", "author"));
+    portal.addUser(User("Szerzõ1", "author"));
 
     // Tartalom megjelenítése
     std::cout << "\nÖsszes tartalom:\n";
@@ -27,12 +27,9 @@ int main() {
     portal.listCommentsForArticle(articleId);
 
     // Keresés
-    std::cout << "\nKeresés szerző szerint:\n";
+    std::cout << "\nKeresés szerzõ szerint:\n";
     auto results = portal.searchByAuthor("Kvariczovszki László");
     std::cout << "Találatok száma: " << results.size() << "\n";
-    for (const auto *article: results) {
-        article->display();
-    }
 
     return 0;
 }

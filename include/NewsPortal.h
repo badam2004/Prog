@@ -8,24 +8,23 @@
 #include "Comment.h"
 #include "User.h"
 
-using std::vector, std::map, std::string, std::cerr, std::endl;
 
 class NewsPortal {
 private:
-    vector<Article> articles;
-    vector<Comment> comments;
-    vector<User> users;
+    std::vector<Article> articles;
+    std::vector<Comment> comments;
+    std::vector<User> users;
 public:
-    void addArticle(const string& title_, const string& content_, const string& author_);
-    void addComment(const string& comment_, const string& username_, const string& articleTitle_);
+    void addArticle(const std::string& title_, const std::string& content_, const std::string& author_);
+    void addComment(const std::string& comment_, const std::string& username_, const std::string& articleTitle_);
     void addUser(const User& user_) { users.push_back(user_); }
 
     void listArticles() const;
-    void listCommentsForArticle(const string& articleTitle_) const;
-    vector<Article> searchByAuthor(const string& author);
-    vector<Article> searchByTitle(const string& title);
-    void readUsersFromFile(const string& filename);
-    bool authenticateUser(const string& username, const string& password);
+    void listCommentsForArticle(const std::string& articleTitle_) const;
+    vector<Article> searchByAuthor(const std::string& author);
+    vector<Article> searchByTitle(const std::string& title);
+    void readUsersFromFile(const std::string& filename);
+    bool authenticateUser(const std::string& username, const std::string& password);
     User* getUserByName(const std::string& username);
 };
 

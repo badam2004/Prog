@@ -5,29 +5,28 @@
 #include <iostream>
 #include "Content.h"
 
-using std::string, std::cout;
 
 class Article : public Content {
 private:
-    string title;
-    string content;
-    string author;
+    std::string title;
+    std::string content;
+    std::string author;
 public:
     // Konstruktor
-    Article(string title_, string content_, string author_): title(title_), content(content_), author(author_) {}
+    Article(std::string title_, std::string content_, std::string author_): title(title_), content(content_), author(author_) {}
     // Getterek
-    string getTitle() const { return title; }
-    string getContent() const {return content; }
-    string getAuthor() const { return author; }
-    string getType() const { return "Cikk"; }
+    std::string getTitle() const { return title; }
+    std::string getContent() const {return content; }
+    std::string getAuthor() const { return author; }
+    std::string getType() const { return "Cikk"; }
     // Setterek
-    void setTitle(const string& title_) { title = title_; }
-    void setContent(const string& content_) { content = content_; }
-    void setAuthor(const string& author_) { author = author_; }
+    void setTitle(const std::string& title_) { title = title_; }
+    void setContent(const std::string& content_) { content = content_; }
+    void setAuthor(const std::string& author_) { author = author_; }
 
-    // Kiirat·s
+    // Kiirat√°s
     void display() const override{
-    cout << "Cikk: " << title << "\nSzerzı: " << author << "\n" << content << "\n";
+    std::cout << "Cikk: " << title << "\nSzerz√µ: " << author << "\n" << content << "\n" << std::endl;
     }
 
 };
